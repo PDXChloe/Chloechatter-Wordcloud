@@ -13,6 +13,26 @@
                 margin: auto;
                 border: 10px solid rgba(128, 128, 128, .7);
             }
+            .word {
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                padding: 10px;
+                background-color: rgb(255, 230, 230);
+                color: rgb(102, 102, 102);
+                transition: padding .35s ease-in,
+                    background-color .8s ease-in,
+                    font-size .35s ease-in;
+
+            }
+
+            input.word:focus {
+                padding: 20px;
+                background-color: rgb(255, 153, 153);
+                font-size: 30px;
+                color: white;
+            }
 
         </style>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -115,25 +135,29 @@
         <div>
             <h1>Want to make your own Wordcloud? </h1>
             <h3>Enter words in order of priority:</h3>
-            <input id="one" type="text" placeholder="your first word"/><br>
-            <input id="two" type="text" placeholder="your second word"/><br>
-            <input id="three" type="text" placeholder="your third word"/><br>
-            <input id="four" type="text" placeholder="your fourth word"/><br>
-            <input id="five" type="text" placeholder="your fifth word"/><br>
-            <input id="six" type="text" placeholder="your sixth word"/><br>
-            <input id="seven" type="text" placeholder="your seventh word"/><br>
-            <input id="eight" type="text" placeholder="your eighth word"/><br>
-            <input id="nine" type="text" placeholder="your ninth word"/><br>
-            <input id="ten" type="text" placeholder="your tenth word"/><br>
+            <input class="word" id="name" type="text" placeholder="Your name here!"/><br>
+            <input class="word" id="one" type="text" placeholder="your first word"/><br>
+            <input class="word" id="two" type="text" placeholder="your second word"/><br>
+            <input class="word" id="three" type="text" placeholder="your third word"/><br>
+            <input class="word" id="four" type="text" placeholder="your fourth word"/><br>
+            <input class="word" id="five" type="text" placeholder="your fifth word"/><br>
+            <input class="word" id="six" type="text" placeholder="your sixth word"/><br>
+            <input class="word" id="seven" type="text" placeholder="your seventh word"/><br>
+            <input class="word" id="eight" type="text" placeholder="your eighth word"/><br>
+            <input class="word" id="nine" type="text" placeholder="your ninth word"/><br>
+            <input class="word" id="ten" type="text" placeholder="your tenth word"/><br>
             <button id="submit_btn" type="submit">Make My Wordcloud!</button><br>
 
         <div class="yourcloud" id="yourcloud" style="position:relative;width:1000px;height:800px;"></div>
+
+
 
         <script src="wordcloud2.js"></script>
 
         <script>
             // a function to get the tags from user inputs
             var submitBtn = document.getElementById('submit_btn');
+
 //            var tags = [];
 
             submitBtn.onclick = function(){
@@ -164,7 +188,6 @@
                 WordCloud(document.getElementById('yourcloud'), {
                 list : words.map(function(word) { return [word[0], Math.round(word[1]/6000)]; })
              });
-
 
         }
         </script>
