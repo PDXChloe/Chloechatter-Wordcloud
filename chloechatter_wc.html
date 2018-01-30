@@ -8,7 +8,10 @@
         <style>
             .cloud {
                 margin: auto;
-
+            }
+            .yourcloud {
+                margin: auto;
+                border: 10px solid rgba(128, 128, 128, .7);
             }
 
         </style>
@@ -129,8 +132,9 @@
         <script src="wordcloud2.js"></script>
 
         <script>
+            // a function to get the tags from user inputs
             var submitBtn = document.getElementById('submit_btn');
-            var tags = [];
+//            var tags = [];
 
             submitBtn.onclick = function(){
                 var one = document.getElementById('one');
@@ -145,11 +149,24 @@
                 var ten = document.getElementById('ten');
 
                 alert(one.value + ", " + two.value);
-            };
+                var words = [
+                    [one.value, 1000000],
+                    [two.value, 700000],
+                    [three.value, 700000],
+                    [four.value, 650000],
+                    [five.value, 630000],
+                    [six.value, 575000],
+                    [seven.value, 500000],
+                    [eight.value, 400000],
+                    [nine.value, 375000],
+                    [ten.value, 300000]
+                ];
+                WordCloud(document.getElementById('yourcloud'), {
+                list : words.map(function(word) { return [word[0], Math.round(word[1]/6000)]; })
+             });
 
-             WordCloud(document.getElementById('yourcloud'), {
-                list : tags.map(function(word) { return [word[0], Math.round(word[1]/10000)]; })
-        });
+
+        }
         </script>
 
 
