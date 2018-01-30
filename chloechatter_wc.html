@@ -90,6 +90,37 @@
         </script>
 
 
+        <div>
+            <h1>Want to make your own Wordcloud? </h1>
+            <h3>Enter words in order of priority:</h3>
+            <input type="text" placeholder="your first word"/><br>
+            <input type="text" placeholder="your second word"/><br>
+            <input type="text" placeholder="your third word"/><br>
+            <input type="text" placeholder="your fourth word"/><br>
+            <input type="text" placeholder="your fifth word"/><br>
+            <input type="text" placeholder="your sixth word"/><br>
+            <input type="text" placeholder="your seventh word"/><br>
+            <input type="text" placeholder="your eighth word"/><br>
+            <input type="text" placeholder="your ninth word"/><br>
+            <input type="text" placeholder="your tenth word"/><br>
+            <button>Make My Wordcloud!</button><br>
+
+        <div class="yourcloud" id="yourcloud" style="position:relative;width:1000px;height:800px;"></div>
+
+        <script src="wordcloud2.js"></script>
+
+        <script>
+            var tags = [];
+
+             WordCloud(document.getElementById('yourcloud'), {
+                list : tags.map(function(word) { return [word[0], Math.round(word[1]/10000)]; })
+        });
+        </script>
+
+
+    </div>
+
+
 
     </body>
 </html>
