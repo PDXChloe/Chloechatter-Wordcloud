@@ -33,6 +33,17 @@
                 font-size: 30px;
                 color: white;
             }
+            .submit_btn {
+                padding: 10px;
+                margin-bottom: 10px;
+                font-size: 20px;
+                transition: padding .35s ease-in;
+            }
+
+            button.submit_btn:hover {
+                padding: 20px;
+
+            }
 
         </style>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -135,7 +146,7 @@
         <div>
             <h1>Want to make your own Wordcloud? </h1>
             <h3>Enter words in order of priority:</h3>
-            <input class="word" id="name" type="text" placeholder="Your name here!"/><br>
+
             <input class="word" id="one" type="text" placeholder="your first word"/><br>
             <input class="word" id="two" type="text" placeholder="your second word"/><br>
             <input class="word" id="three" type="text" placeholder="your third word"/><br>
@@ -146,7 +157,7 @@
             <input class="word" id="eight" type="text" placeholder="your eighth word"/><br>
             <input class="word" id="nine" type="text" placeholder="your ninth word"/><br>
             <input class="word" id="ten" type="text" placeholder="your tenth word"/><br>
-            <button id="submit_btn" type="submit">Make My Wordcloud!</button><br>
+            <button class="submit_btn" id="submit_btn" type="submit">Make My Wordcloud!</button><br>
 
         <div class="yourcloud" id="yourcloud" style="position:relative;width:1000px;height:800px;"></div>
 
